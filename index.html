@@ -4,6 +4,7 @@
     <title>Google Flu Trends</title>
     <link rel="stylesheet"
           href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
+    <link rel="stylesheet" href="flu.css"/>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <script src="lib/jquery.csv-0.71.min.js"></script>
@@ -18,10 +19,13 @@
       <time id="maptime"></time>
     </header>
     <article>
-      <svg width="960" height="600" id="map"
-           xmlns="http://www.w3.org/2000/svg" version="1.1"
-           xmlns:xlink="http://www.w3.org/1999/xlink">
-      </svg>
+      <img src="img/spin.gif" alt="Loading ..." class="spin"/>
+      <div class="output">
+        <svg width="960" height="600" id="map"
+             xmlns="http://www.w3.org/2000/svg" version="1.1"
+             xmlns:xlink="http://www.w3.org/1999/xlink">
+        </svg>
+      </div>
     </article>
     <div id="date-slider"></div>
     <footer>

@@ -20,6 +20,8 @@ function loadData(raw) {
     });
 
     display(Date.now());
+    $('.spin').remove();
+    $('.output').show();
 }
 
 function insertMap(map) {
