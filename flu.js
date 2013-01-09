@@ -1,8 +1,10 @@
+var DATA_URL = 'http://anyorigin.com/get?url=http%3A//www.google.org/flutrends/us/data.txt&callback=?';
 var DAY = 24 * 60 * 60 * 1000;
 
 var timeline, slider;
+var foo;
 function loadData(raw) {
-    var csv = raw.replace(/(.|[\r\n])+Date/, 'Date'); // clear header
+    var csv = raw.contents.replace(/(.|[\r\n])+Date/, 'Date'); // clear header
     timeline = $.csv.toObjects(csv);
     timeline.forEach(function(row) {
         row.Date = new Date(row.Date);
@@ -22,7 +24,7 @@ function loadData(raw) {
 
 function insertMap(map) {
     $('#map').append(map.documentElement);
-    $.get('data.txt', loadData, 'text');
+    $.getJSON(DATA_URL, loadData);
 }
 
 function findRow(date) {
