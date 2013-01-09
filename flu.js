@@ -1,10 +1,22 @@
-var timeline;
+var DAY = 24 * 60 * 60 * 1000;
+
+var timeline, slider;
 function loadData(raw) {
     var csv = raw.replace(/(.|[\r\n])+Date/, 'Date'); // clear header
     timeline = $.csv.toObjects(csv);
     timeline.forEach(function(row) {
         row.Date = new Date(row.Date);
     });
+
+    slider = $('#date-slider').slider({
+        min: timeline[0].Date.valueOf(),
+        max: Date.now(),
+        step: DAY,
+        value: Date.now(),
+        change: sliderUpdate,
+        slide: sliderUpdate
+    });
+
     display(Date.now());
 }
 
@@ -31,6 +43,10 @@ function display(date) {
         $('#' + abbr).css('fill', color);
     }
     $('#maptime').text(row.Date.toDateString());
+}
+
+function sliderUpdate(event) {
+    display(slider.slider('value'));
 }
 
 $(document).ready(function() {
