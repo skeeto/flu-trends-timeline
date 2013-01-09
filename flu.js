@@ -13,7 +13,7 @@ function loadData(raw) {
     slider = $('#date-slider').slider({
         min: timeline[0].Date.valueOf(),
         max: Date.now(),
-        step: DAY,
+        step: 7 * DAY,
         value: Date.now(),
         change: sliderUpdate,
         slide: sliderUpdate
