@@ -1,5 +1,6 @@
 body {
-    width: 1024px;
+    width: 90%;
+    max-width: 900px;
     margin: 0 auto;
     background-color: lightblue;
     font-family: sans;
@@ -23,6 +24,8 @@ article svg {
     padding: 5px;
     border-radius: 15px;
     background-color: #9ec7f3;
+    width: 100%;
+    height: 100%;
 }
 
 #date-slider {
