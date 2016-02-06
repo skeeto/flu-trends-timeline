@@ -1,4 +1,4 @@
-var DATA_URL = 'http://whateverorigin.org/get?url=http%3A//www.google.org/flutrends/us/data.txt&callback=?';
+var DATA_URL = 'http://whateverorigin.org/get?url=http%3A//www.google.org/flutrends/about/data/flu/us/data.txt&callback=?';
 var DAY = 24 * 60 * 60 * 1000;
 
 var timeline, slider;
